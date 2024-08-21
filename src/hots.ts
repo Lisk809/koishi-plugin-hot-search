@@ -1,4 +1,4 @@
-import services from './service'
+import * as services from './services'
 import {config} from './index';
 
 
@@ -43,4 +43,4 @@ class Hots{
   }
 }
 
-export const hots = new Hots(services)
+export const hots = new Hots(Object.values(services))
