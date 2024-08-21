@@ -11,6 +11,7 @@ export interface Config {
 }
 
 export const Config: Schema<Config> = Schema.object({
+  command:Schema.string().default("hotof")
   endpoints:Schema.object({
     bili:Schema.string(),
     douyin:Schema.string(),
