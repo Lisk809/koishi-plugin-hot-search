@@ -1,5 +1,3 @@
-import { isEmpty } from "./utils";
-
 import type {Config} from "./index"
 
 import { Context, Command } from "koishi";
