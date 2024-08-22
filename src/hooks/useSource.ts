@@ -1,6 +1,3 @@
-import { useData } from "./useData";
-
-const config = useData();
-export function useSource(name) {
+export function useSource(config, name) {
   return config.endpoints[name];
 }
