@@ -1,4 +1,5 @@
-import {config} from "../index"
-export function useData(){
-  return config
+import { hots } from "../index";
+const { config } = hots;
+export function useData() {
+  return config;
 }
