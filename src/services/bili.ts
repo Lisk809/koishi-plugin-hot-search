@@ -1,5 +1,5 @@
 import type { Context, Command } from "koishi";
-import { useSource, useImage, useData } from "../hooks";
+import { useSource, useImage } from "../hooks";
 
 export const name = "bili";
 
