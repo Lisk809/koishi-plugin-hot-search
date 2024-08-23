@@ -15,7 +15,7 @@ interface BiliData {
   };
 }
 
-export async function handler(ctx: Context, config: Config, hotof: Command) {
+export async function handler(ctx: Context, config: Config) {
   const source = useSource(config, name);
   const image = useImage(config);
   ctx
