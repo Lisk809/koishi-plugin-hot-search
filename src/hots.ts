@@ -20,24 +20,24 @@ export class Hots {
   define(name: string, handler: (ctx: Context, hotof: Command) => void) {
     this.services.push({ name, handler });
   }
-  async apply(ctx, name, handler, hotof) {
-    handler.call(ctx, hotof);
+  apply(ctx, handler) {
+    handler(ctx, this.config);
   }
   initialize(instance) {
     instance.usage("Get platform hot search!");
-    instance.example("hotof.bili -i -n=10");
+    instance.example("hotof.bili -i -n 10");
   }
-  use(ctx) {
-    this.config = ctx.root.config;
-    const hotof = ctx.command(ctx.root.config.command);
+  use(ctx, config) {
+    this.config = config;
+    const hotof = ctx.command(this.config.command);
     this.initialize(hotof);
-    this.mounted(hotof, ctx);
+    this.mounted(ctx);
   }
-  mounted(hotof, ctx) {
+  mounted(ctx) {
     if (!this.services.length) throw new TypeError("services list is empty");
     this.services.forEach(({ name, handler }, index) => {
       try {
-        this.apply(ctx, name, handler, hotof);
+        this.apply(ctx, handler);
       } catch (e) {
         this.services[index].status = "error";
         throw e;

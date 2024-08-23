@@ -1,4 +1,6 @@
 import type { Context, Command } from "koishi";
+import type { Config } from "../index"
+
 import { useSource, useImage } from "../hooks";
 
 export const name = "bili";
@@ -13,11 +15,11 @@ interface BiliData {
   };
 }
 
-export async function handler(ctx: Context, hotof: Command) {
-  const source = useSource(name);
-  const image = useImage(ctx.root.config);
-  hotof
-    .subcommand(name)
+export async function handler(ctx: Context, config: Config, hotof: Command) {
+  const source = useSource(config, name);
+  const image = useImage(config);
+  ctx
+    .command("hotof."+name)
     .option("num", "-n <num:number>", { fallback: 10 })
     .action(async ({ options }) => {
       const data: BiliData = await fetch(source).then((res) => res.json());
@@ -25,7 +27,7 @@ export async function handler(ctx: Context, hotof: Command) {
         .slice(0, options.num)
         .map(
           (a) =>
-            `=${a.position}= ${a.keyword}\n${a.icon ? image(a.icon) : "(暂无图片捏)"}\n`,
+            `=${a.position}= [${(a.icon||"").endsWith("Ko24.png")?"热":(a.icon?"新":"无")}]${a.keyword}\n`,
         )
         .join("");
     });

@@ -1,4 +1,6 @@
 import { Context, Command } from "koishi";
+import type { Config } from "../index"
+
 import { useSource, useImage } from "../hooks";
 
 export const name = "douyin";
@@ -23,11 +25,11 @@ interface DouyinData {
   };
 }
 
-export async function handler(ctx: Context, hotof: Command) {
-  const source = useSource(name);
-  const image = useImage(ctx.root.config);
-  hotof
-    .subcommand(name)
+export async function handler(ctx: Context, config: Config) {
+  const source = useSource(config, name);
+  const image = useImage(config);
+  ctx
+    .command(`hotof.${name}`)
     .option("num", "-n <num:number>", { fallback: 10 })
     .action(async ({ options }) => {
       const data: DouyinData = await fetch(source).then((res) => res.json());

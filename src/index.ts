@@ -31,6 +31,6 @@ export const Config: Schema<Config> = Schema.object({
   isUseImage: Schema.boolean().default(true),
 });
 
-export function apply(ctx: Context) {
-  hots.use(ctx);
+export function apply(ctx: Context, config: Config) {
+  hots.use(ctx, config);
 }
