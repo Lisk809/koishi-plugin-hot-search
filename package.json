@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "dev": "tsc -w",
-    "build": "tsc && tsc-alias",
+    "build": "tsc",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier -w src"
