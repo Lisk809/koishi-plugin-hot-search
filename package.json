@@ -8,6 +8,16 @@
     "lib",
     "dist"
   ],
+  "author": {
+    "name": "Lisk",
+    "email": "hi@lisks.top",
+    "url": "https://github.com/lisk809"
+  },
+  "homepage": "https://github.com/lisk809/koishi-plugin-hot-search#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lisk809/koishi-plugin-hot-search.git"
+  },
   "license": "MIT",
   "keywords": [
     "chatbot",
@@ -23,7 +33,7 @@
   },
   "devDependencies": {
     "@kigoo/prettier-config": "^0.0.1",
-    "@kigoo/eslint-config":"^0.0.2",
+    "@kigoo/eslint-config": "^0.0.2",
     "@types/eslint": "^9",
     "eslint": "^8",
     "prettier": "^3.3.3"
