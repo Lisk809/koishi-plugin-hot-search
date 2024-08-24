@@ -14,9 +14,18 @@
     "koishi",
     "plugin"
   ],
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc && tsc-alias",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier -w src"
+  },
   "devDependencies": {
+    "@kigoo/prettier-config": "^0.0.1",
+    "@kigoo/eslint-config":"^0.0.2",
     "@types/eslint": "^9",
-    "eslint": "^9.9.1",
+    "eslint": "^8",
     "prettier": "^3.3.3"
   },
   "peerDependencies": {
