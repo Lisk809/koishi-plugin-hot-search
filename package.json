@@ -9,13 +9,16 @@
     "dist"
   ],
   "license": "MIT",
-  "scripts": {},
   "keywords": [
     "chatbot",
     "koishi",
     "plugin"
   ],
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/eslint": "^9",
+    "eslint": "^9.9.1",
+    "prettier": "^3.3.3"
+  },
   "peerDependencies": {
     "koishi": "^4.17.9"
   }
