@@ -24,7 +24,7 @@ export async function handler(ctx: Context, config: Config) {
   const source = useSource(config, name)
   const image = useImage(config)
   ctx
-    .command('hotof.' + name)
+    .command(`${config.command}${name}`)
     .option('num', '-n <num:number>', { fallback: 10 })
     .action(async ({ options }) => {
       const data: WeiboData = await fetch(source).then((res) => res.json())

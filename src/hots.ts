@@ -11,14 +11,14 @@ type service = {
 export class Hots {
   services: service[]
   config: Config
+  ctx: Context
   constructor(internal) {
     this.services = []
-    internal.forEach(({ name, handler }) => {
-      this.define(name, handler)
-    })
+    this.services=this.services.concat(internal)
   }
   define(name: string, handler: (ctx: Context, hotof: Command) => void) {
     this.services.push({ name, handler })
+    this.apply(this.ctx, handler)
   }
   apply(ctx, handler) {
     handler(ctx, this.config)
@@ -29,11 +29,12 @@ export class Hots {
   }
   use(ctx, config) {
     this.config = config
+    this.ctx = ctx
     const hotof = ctx.command(this.config.command)
     this.initialize(hotof)
-    this.mounted(ctx)
+    this.mount(ctx)
   }
-  mounted(ctx) {
+  mount(ctx) {
     if (!this.services.length) throw new TypeError('services list is empty')
     this.services.forEach(({ name, handler }, index) => {
       try {

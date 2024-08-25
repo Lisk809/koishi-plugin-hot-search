@@ -17,7 +17,7 @@ export async function handler(ctx: Context, config: Config) {
   const source = useSource(config, name)
   const image = useImage(config)
   ctx
-    .command('hotof.' + name)
+    .command(`${config.command}${name}`)
     .option('num', '-n <num:number>', { fallback: 10 })
     .action(async ({ options }) => {
       const data: ZhihuData = await fetch(source).then((res) => res.json())
@@ -25,7 +25,7 @@ export async function handler(ctx: Context, config: Config) {
         '知乎热搜🔥\n' +
         data.top_search.words
           .slice(0, options.num)
-          .map((a) => `${a.display_query}`)
+          .map((a) => `+ ${a.display_query}`)
           .join('\n')
       )
     })

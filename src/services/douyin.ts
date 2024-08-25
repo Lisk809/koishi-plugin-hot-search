@@ -29,7 +29,7 @@ export async function handler(ctx: Context, config: Config) {
   const source = useSource(config, name)
   const image = useImage(config)
   ctx
-    .command(`hotof.${name}`)
+    .command(`${config.command}${name}`)
     .option('num', '-n <num:number>', { fallback: 10 })
     .action(async ({ options }) => {
       const data: DouyinData = await fetch(source).then((res) => res.json())
@@ -37,14 +37,13 @@ export async function handler(ctx: Context, config: Config) {
         .slice(0, options.num)
         .map(
           (a) =>
-            `=${a.position}= ${a.word}(${a.hot_value / 10000 + 'w'}, 视频${a.video_count})\n${a.word_cover.url_list[0] ? image(a.word_cover.url_list[0]) : '(暂无图片捏)'}\n`,
+            `=${a.position}= ${a.word}(${(a.hot_value / 10000).toFixed(2) + 'w'}, 视频${a.video_count})\n${a.word_cover.url_list[0] ? image(a.word_cover.url_list[0]) : '(暂无图片捏)'}\n`,
         )
         .join('')
-      const trendings =
-        '实时上升热点\n' +
+      const trendings = 
         data.data.trending_list
           .slice(0, options.num)
-          .map((a) => `+ ${a.word}(视频${a.video_count})\n${a.word_cover.url_list[0]}\n`)
-      return `■热点榜■\n${hots}\n■实时上升热点■${trendings}`
+          .map((a) => `+ ${a.word}(视频${a.video_count})\n${a.word_cover.url_list[0]? image(a.word_cover.url_list[0]):'(暂无图片捏)'}\n`).join('')
+      return `■热点榜■\n${hots}\n■实时上升热点■\n${trendings}`
     })
 }
