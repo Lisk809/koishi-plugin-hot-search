@@ -24,8 +24,8 @@ export class Hots {
     handler(ctx, this.config)
   }
   initialize(instance) {
-    instance.usage('Get platform hot search!')
-    instance.example('hotof.bili -i -n 10')
+    instance.usage('获取各平台热搜🔥')
+    instance.example('hotof.bili -n 10')
   }
   use(ctx, config) {
     this.config = config
