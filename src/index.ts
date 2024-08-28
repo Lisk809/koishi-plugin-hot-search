@@ -15,7 +15,7 @@ export interface Config {
 }
 
 export const Config: Schema<Config> = Schema.object({
-  command: Schema.string().default('hotof.'),
+  command: Schema.string().default("hotof").description("指令前缀字段")
   endpoints: Schema.object({
     bili: Schema.string(),
     douyin: Schema.string(),
@@ -26,8 +26,8 @@ export const Config: Schema<Config> = Schema.object({
     douyin: 'https://aweme-lq.snssdk.com/aweme/v1/hot/search/list/?aid=1128&version_code=880',
     zhihu: 'https://www.zhihu.com/api/v4/search/top_search',
     weibo: 'https://weibo.com/ajax/side/hotSearch',
-  }),
-  isUseImage: Schema.boolean().default(true),
+  }).description("平台获取热搜的api"),
+  isUseImage: Schema.boolean().default(true).description("是否使用图片消息")
 })
 
 export function apply(ctx: Context, config: Config) {
