@@ -11,11 +11,8 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "moduleResolution": "bundler",
-    "jsx": "react-jsx",
-    "jsxImportSource": "@satorijs/element",
     "types": [
-      "node",
-      "yml-register/types"
+      "node"
     ]
   },
   "include": [
