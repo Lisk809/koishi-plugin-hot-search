@@ -15,7 +15,7 @@ export interface Config {
 }
 
 export const Config: Schema<Config> = Schema.object({
-  command: Schema.string().default("hotof").description("指令前缀字段")
+  command: Schema.string().default("hotof").description("指令前缀字段"),
   endpoints: Schema.object({
     bili: Schema.string(),
     douyin: Schema.string(),
