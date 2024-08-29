@@ -53,17 +53,17 @@
   resolved "https://registry.npmmirror.com/@humanwhocodes/object-schema/-/object-schema-2.0.3.tgz#4a2868d75d6d6963e423bcf90b7fd1be343409d3"
   integrity sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==
 
-"@kigoo/eslint-config-ts@0.0.1":
-  version "0.0.1"
-  resolved "https://registry.npmmirror.com/@kigoo/eslint-config-ts/-/eslint-config-ts-0.0.1.tgz#55b93316a8e566c4af211be2e387674d90e2e2b5"
-  integrity sha512-gHMdcZxGRuO00G2E4gAVkQy3sVag2k4KmloKwGcEqxBgtmQ0tQ5NpTcLgWZjys/gSRGr2z4/pA5vJGAQ+Z0Cpw==
+"@kigoo/eslint-config-ts@0.0.3":
+  version "0.0.3"
+  resolved "https://registry.npmmirror.com/@kigoo/eslint-config-ts/-/eslint-config-ts-0.0.3.tgz#1389edab0ddca13f7a5e08084c7541ac85b441aa"
+  integrity sha512-0W4tE3E2s99ruOHlCtLRPw3Sw/sEjBUcNU42x5dxcnYG2bD6DELJCcC3b3uomi5KZuOk+C/xPcgu9m1IlFjN5A==
   dependencies:
-    "@kigoo/eslint-config-vanilla" "0.6.1"
+    "@kigoo/eslint-config-vanilla" "0.0.2"
     "@typescript-eslint/eslint-plugin" "^5.62.0"
     "@typescript-eslint/parser" "^5.62.0"
     eslint-define-config "^1.23.0"
 
-"@kigoo/eslint-config-vanilla@0.0.2", "@kigoo/eslint-config-vanilla@0.6.1":
+"@kigoo/eslint-config-vanilla@0.0.2":
   version "0.0.2"
   resolved "https://registry.npmmirror.com/@kigoo/eslint-config-vanilla/-/eslint-config-vanilla-0.0.2.tgz#31327427889d7305c67735d45e96c34fe73c936d"
   integrity sha512-aZmu7i1KYFKWRmY9G8HdDmez78qbUvuwE6zoMBho26sKIVNAkGqIGfAdo0MML02ILD0VglGFIu8EwNF0ORBGrw==
@@ -76,12 +76,12 @@
     eslint-plugin-prettier "^5.0.0"
     eslint-plugin-promise "^6.1.1"
 
-"@kigoo/eslint-config@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.npmmirror.com/@kigoo/eslint-config/-/eslint-config-0.0.2.tgz#b9f82aa8ff284ed2fd3e7431fecd99c0e02fc0f9"
-  integrity sha512-ROleNUvcSbDazyBWHB2ojEUf92h3FqtaYPDtnv645MpRFKIoAQLSUu/yUVkSoA8zwfphOc4RU3EsxOI/NBwvrA==
+"@kigoo/eslint-config@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.npmmirror.com/@kigoo/eslint-config/-/eslint-config-0.0.3.tgz#bdc26fdcf70324a193212380ada3d0c1863bf277"
+  integrity sha512-xArbBV+X5JraGh9ISXbEMLDIuZBP/wLOHPK9wLnGZa9hFIlfc2Yy3/KGSYy7syUKzv+A+X2/0JMeESdeIQZYng==
   dependencies:
-    "@kigoo/eslint-config-ts" "0.0.1"
+    "@kigoo/eslint-config-ts" "0.0.3"
     "@kigoo/eslint-config-vanilla" "0.0.2"
     eslint-define-config "^1.23.0"
     local-pkg "^0.4.3"
